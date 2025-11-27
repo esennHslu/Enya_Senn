@@ -36,9 +36,6 @@ header.site-header h1 {
     margin: 0;
     font-size: clamp(1.25rem, 2.5vw, 2rem);
     letter-spacing: .5px;
-    font-family: "Questrial", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 @media (min-width:900px) {
@@ -84,9 +81,6 @@ nav.site-nav {
     z-index: 1000;
     background: var(--light);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    font-family: "Questrial", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 .nav-inner {
@@ -114,105 +108,23 @@ nav.site-nav {
     outline: none;
 }
 
-
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: .75rem;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 28px;
-    background: var(--brand, #333);
-    border-radius: 3px;
-    transition: 0.3s ease;
-}
-
-.hamburger::before {
-    transform: translateY(-9px);
-}
-
-.hamburger::after {
-    transform: translateY(6px);
-}
-
-/* Mobile state */
-@media (max-width: 540px) {
-
-    /* make entire banner sticky only on mobile */
-    header.site-header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    }
-
+@media (max-width:540px) {
     .nav-inner {
-        justify-content: stretch;
+        justify-content: stretch
     }
 
     .site-nav a {
         flex: 1 1 100%;
-        text-align: center;
+        text-align: center
     }
 
-    /* hamburger on the banner, right side */
-    .nav-toggle {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: .4rem;
-        z-index: 1001;
-    }
-
-    .site-nav {
-        position: relative; /* so dropdown anchors to nav */
-    }
-
-    .site-nav .nav-inner {
-        display: none;
-        flex-direction: column;
-        background: #fff;
-        position: absolute;
-        top: 74px;   /* directly under the banner */
-        left: 0;
-        width: 100%;
-        padding: 1.5rem 1rem;
-        border-top: 1px solid #e5e5e5;
+    nav.site-nav {
+        position: static;
+        top: auto;
         box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
-    }
-
-    .site-nav.open .nav-inner {
-        display: flex;
-    }
-
-    /* Animate hamburger into X */
-    .site-nav.open .hamburger {
-        background: transparent;
-    }
-
-    .site-nav.open .hamburger::before {
-        transform: rotate(45deg) translateY(2px);
-    }
-
-    .site-nav.open .hamburger::after {
-        transform: rotate(-45deg) translateY(-3px);
+        background: var(--light);
     }
 }
-
-
 
 /* Footer */
 footer.site-footer {
@@ -652,7 +564,7 @@ footer a:focus {
     justify-content: center;
     text-align: center;
     gap: 1rem;
-    grid-column: span 1
+    grid-column: span 2
 }
 
 .fact-row {
@@ -764,96 +676,3 @@ footer a:focus {
     color: var(--ink)
 }
 
-/* Form Styling */
-.booking-wrap {
-    max-width: 900px;
-    margin: 1.5rem auto 2.5rem;
-}
-
-.booking-intro {
-    margin-bottom: 1.5rem;
-}
-
-.booking-intro h2 {
-    margin: .25rem 0 .5rem;
-    font-size: 2rem;
-    color: var(--brand);
-}
-
-.booking-intro p {
-    margin: .35rem 0;
-    color: #444;
-}
-
-.booking-form {
-    margin-top: 1rem;
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
-
-.form-field label {
-    font-weight: 600;
-    margin-bottom: .25rem;
-    color: var(--brand);
-}
-
-.form-field span.helper {
-    font-size: .85rem;
-    color: #666;
-    margin-bottom: .25rem;
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-    font: inherit;
-    padding: .55rem .6rem;
-    border-radius: .4rem;
-    border: 1px solid #cfd9df;
-}
-
-.form-inline-group {
-    display: flex;
-    gap: .75rem;
-    flex-wrap: wrap;
-    margin-bottom: .5rem;
-}
-
-.form-inline-group label {
-    font-weight: 400;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: .35rem;
-}
-
-.error-message {
-    font-size: .85rem;
-    color: #b00020;
-    margin-top: .25rem;
-}
-
-.has-error input,
-.has-error select,
-.has-error textarea {
-    border-color: #b00020;
-    background: #fff6f6;
-}
-
-.booking-success {
-    margin-top: 1.5rem;
-    padding: 1rem 1.1rem;
-    border-radius: .75rem;
-    border: 1px solid #cde7d0;
-    background: #f3fbf5;
-    color: #265d2c;
-    display: none;
-}
-
-.booking-success.show {
-    display: block;
-}

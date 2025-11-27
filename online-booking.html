@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>100SMILES Dental Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="home">
+    <header class="site-header" role="banner">
+        <h1>
+            <a href="index.html">100SMILES Dental Care</a>
+        </h1>
+    </header>
+
+    <nav class="site-nav" aria-label="Primary">
+        <div class="nav-inner">
+            <a href="services.html">Services</a>
+            <a href="free-dental-checkup.html">Free Dental Check-up</a>
+            <a href="annual-check-up.html">Annual Dental Check Up</a>
+            <a href="our-team.html">Our Team</a>
+            <a href="articles.html">Articles</a>
+            <a href="online-booking.html">Online Booking</a>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="booking-wrap band" aria-labelledby="booking-title">
+            <div class="booking-intro">
+                <h2 id="booking-title">Online Booking</h2>
+                <p>Use this form to request an appointment with 100SMILES Dental Care. We’ll review your details and
+                    contact you
+                    to confirm an exact time.</p>
+                <p>For urgent or emergency concerns, please <a href="tel:+61750005599"><strong>call the clinic</strong>
+                    </a>so we can assist you as
+                    quickly as
+                    possible.</p>
+            </div>
+
+            <form id="booking-form" class="booking-form" novalidate>
+                <div class="grid grid--2">
+                    <!-- Full name -->
+                    <div class="form-field" data-field="name">
+                        <label for="fullName">Full name *</label>
+                        <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-field" data-field="email">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="form-field" data-field="phone">
+                        <label for="phone">Phone number *</label>
+                        <span class="helper">Please include your country/area code.</span>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Patient type -->
+                    <div class="form-field" data-field="patientType">
+                        <label>Are you a new or existing patient? *</label>
+                        <div class="form-inline-group">
+                            <label>
+                                <input type="radio" name="patientType" value="New" required>
+                                New patient
+                            </label>
+                            <label>
+                                <input type="radio" name="patientType" value="Existing">
+                                Existing patient
+                            </label>
+                        </div>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Service type -->
+                    <div class="form-field" data-field="service">
+                        <label for="service">Service you’re interested in *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Please choose…</option>
+                            <option value="Annual Dental Check-Up">Annual Dental Check-Up</option>
+                            <option value="Orthodontics">Orthodontics</option>
+                            <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                            <option value="Oral Hygiene & Preventive Care">Oral Hygiene &amp; Preventive Care</option>
+                            <option value="Dental Implants">Dental Implants</option>
+                            <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                            <option value="Emergency Dental Care">Emergency dental care (non-urgent)</option>
+                            <option value="Other">Something else</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Preferred dentist -->
+                    <div class="form-field" data-field="dentist">
+                        <label for="dentist">Preferred clinician</label>
+                        <select id="dentist" name="dentist">
+                            <option value="">No preference</option>
+                            <option value="Dr Johanna Grey">Dr Johanna Grey (Orthodontics)</option>
+                            <option value="Dr Emily Carter">Dr Emily Carter (Pediatric Dentist)</option>
+                            <option value="Dr Benedict Sloan">Dr Benedict Sloan (Dentist)</option>
+                            <option value="Any available clinician">Any available clinician</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="form-field" data-field="date">
+                        <label for="date">Preferred date *</label>
+                        <input type="date" id="date" name="date" required>
+                        <div class="error-message"></div>
+                    </div>
+
+                    <!-- Time -->
+                    <div class="form-field" data-field="timeWindow">
+                        <label for="timeWindow">Preferred time of day *</label>
+                        <select id="timeWindow" name="timeWindow" required>
+                            <option value="">Please choose…</option>
+                            <option value="Morning">Morning (8:30am – 11:30am)</option>
+                            <option value="Afternoon">Afternoon (12:00pm – 3:30pm)</option>
+                            <option value="Evening">Evening (4:00pm – 6:30pm)</option>
+                            <option value="Weekend">Weekend (where available)</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-field" data-field="notes">
+                    <label for="notes">Notes (optional)</label>
+                    <span class="helper">E.g. main concern, how long it has been an issue, accessibility needs.</span>
+                    <textarea id="notes" name="notes" rows="4"></textarea>
+                    <div class="error-message"></div>
+                </div>
+
+                <!-- Consent -->
+                <div class="form-field" data-field="consent">
+                    <label>
+                        <input type="checkbox" id="consent" name="consent" required>
+                        I agree that 100SMILES Dental Care may use my details to contact me about this booking request.
+                        *
+                    </label>
+                    <div class="error-message"></div>
+                </div>
+
+                <button type="submit" class="btn">Submit Booking Request</button>
+
+                <div id="booking-success" class="booking-success" role="status" aria-live="polite">
+                    Thank you for your request. We’ve received your details and will contact you shortly to confirm an
+                    appointment
+                    time.
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <div>
+                <h2>Contact</h2>
+                <p>Phone: <a href="tel:+61750005599">07 5000 5599</a></p>
+                <p>Fax: <a href="tel:+61745679999">07 4567 9999</a></p>
+                <address>Address: 33 Fantail Street, Razole, Queensland.</address>
+                <p>Email: <a href="mailto:admin@100smilesdentalcare.com.au">admin@100smilesdentalcare.com.au</a></p>
+            </div>
+
+            <div>
+                <h2>Trading Hours</h2>
+                <p>Monday – Friday: 8:30am - 6:30 PM</p>
+                <p>Saturday – Sunday: 8:30am - 1pm</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/booking-request.js"></script>
+
+</body>
+
+</html>
